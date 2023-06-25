@@ -13,7 +13,7 @@
       ],
       "Type": "ServiceTask",
       "Next": "Fail",
-      "CompensateState": "CompensateA",
+      "CompensateState": "CompensateA"
     },
     "CompensateA": {
       "Comment": "CompensateA",
