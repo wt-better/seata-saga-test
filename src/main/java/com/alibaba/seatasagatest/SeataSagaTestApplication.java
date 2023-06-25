@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 
 @SpringBootApplication(exclude = {SeataAutoConfiguration.class})
-@ImportResource(locations = "classpath:spring/saga-test.xml")
+@ImportResource(locations = "classpath:spring/saga-mock-tc-test.xml")
 public class SeataSagaTestApplication implements BeanFactoryAware {
 
     private static BeanFactory beanFactoryRef;
