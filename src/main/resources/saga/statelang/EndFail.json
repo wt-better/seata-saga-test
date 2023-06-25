@@ -1,0 +1,37 @@
+{
+  "Name": "EndFail",
+  "Comment": "",
+  "Version": "0.0.1",
+  "StartState": "DoA",
+  "States": {
+    "DoA": {
+      "Comment": "DoA",
+      "ServiceName": "aService",
+      "ServiceMethod": "doA",
+      "Input": [
+        "$.[paramA]"
+      ],
+      "Type": "ServiceTask",
+      "Next": "Fail",
+      "CompensateState": "CompensateA",
+    },
+    "CompensateA": {
+      "Comment": "CompensateA",
+      "ServiceName": "aService",
+      "ServiceMethod": "compensateA",
+      "Input": [
+        "$.[paramA]"
+      ],
+      "Type": "ServiceTask"
+    },
+    "Fail": {
+      "Type": "Fail",
+      "ErrorCode": "PURCHASE_FAILED",
+      "Message": "purchase failed"
+    },
+    "Succeed" : {
+      "Comment" : "Succeed",
+      "Type" : "Succeed"
+    }
+  }
+}

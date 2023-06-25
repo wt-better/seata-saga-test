@@ -1,0 +1,40 @@
+{
+  "Name" : "QuickStart",
+  "Comment" : "",
+  "Version" : "0.0.1",
+  "StartState" : "DoA",
+  "States" : {
+    "DoA" : {
+      "Comment" : "DoA",
+      "ServiceName" : "aService",
+      "ServiceMethod" : "doA",
+      "Input" : [ "$.[paramA]" ],
+      "Type" : "ServiceTask",
+      "Next" : "DoB",
+      "CompensateState" : "CompensateA"
+    },
+    "DoB" : {
+      "Comment" : "DoB",
+      "ServiceName" : "bService",
+      "ServiceMethod" : "doB",
+      "Input" : [ "$.[paramB]" ],
+      "Type" : "ServiceTask",
+      "Next" : "Succeed",
+      "CompensateState" : "CompensateB"
+    },
+    "CompensateA" : {
+      "Comment" : "CompensateA",
+      "ServiceName" : "aService",
+      "ServiceMethod" : "compensateA",
+      "Input" : [ "$.[paramA]" ],
+      "Type" : "ServiceTask"
+    },
+    "CompensateB" : {
+      "Comment" : "CompensateB",
+      "ServiceName" : "bService",
+      "ServiceMethod" : "compensateB",
+      "Input" : [ "$.[paramB]" ],
+      "Type" : "ServiceTask"
+    }
+  }
+}
